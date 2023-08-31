@@ -113,7 +113,7 @@ az staticwebapp create -n <name> -g <resource-group>
 once it has been created, get the Static Web App deployment token:
 
 ```shell
-az staticwebapp secrets list --name <name> --query "properties.apiKey" -o tsv
+az staticwebapp secrets list --name <name> -g <resource-group> --query "properties.apiKey" -o tsv
 ```
 
 Take the token and add it to the repository secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`.
