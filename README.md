@@ -129,7 +129,7 @@ az sql server create -n <server-name> -g <resource-group> -l <location> --admin-
 and set yourself as the AD admin. To do that get your user object id:
 
 ```shell
-az ad signed-in-user show --query objectId -o tsv
+az ad signed-in-user show --query id -o tsv
 ```
 
 and get the display name:
@@ -141,7 +141,7 @@ az ad signed-in-user show --query displayName -o tsv
 The create the AD admin in Azure SQL server:
 
 ```shell
-az sql server ad-admin create --display-name <display-name> --object-id <object-id> --server <server-name> -g <resource-group>
+az sql server ad-admin create --display-name <display-name> --object-id id --server <server-name> -g <resource-group>
 ```
 
 Make sure that Azure Services can connect to the created Azure SQL server:
